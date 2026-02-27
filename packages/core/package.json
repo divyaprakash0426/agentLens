@@ -1,6 +1,6 @@
 {
   "name": "agentlens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Visualize AI agent actions on your live web page — animated cursor, element spotlight, DOM execution",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
