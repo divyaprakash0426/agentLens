@@ -1,4 +1,4 @@
-import type { AgentAction, ParserFormat } from 'agentlens';
+import type { AgentAction, ParserFormat } from 'agentlens-core';
 import { useCallback } from 'react';
 import { useAgentLens } from './useAgentLens';
 

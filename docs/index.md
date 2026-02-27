@@ -7,12 +7,12 @@ AgentLens is a framework-agnostic browser library that renders AI actions as a v
 ## Quickstart
 
 ```bash
-pnpm add agentlens
+pnpm add agentlens-core
 ```
 
 ```ts
-import { AgentLens } from 'agentlens';
-import 'agentlens/styles';
+import { AgentLens } from 'agentlens-core';
+import 'agentlens-core/styles';
 
 const lens = new AgentLens();
 lens.enqueue({ type: 'click', selector: '#submit' });

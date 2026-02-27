@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@agentlens/react": "workspace:*",
-    "agentlens": "workspace:*",
+    "agentlens-react": "workspace:*",
+    "agentlens-core": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

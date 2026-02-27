@@ -1,4 +1,4 @@
-import { AgentLens, ActionParser } from 'agentlens';
+import { AgentLens, ActionParser } from 'agentlens-core';
 import 'agentlens/styles';
 
 const lens = new AgentLens({

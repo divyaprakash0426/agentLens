@@ -1,4 +1,4 @@
-declare module 'agentlens' {
+declare module 'agentlens-core' {
   export type ParserFormat = 'gemini' | 'openai' | 'anthropic' | 'generic';
 
   export interface AgentAction {

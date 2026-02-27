@@ -1,4 +1,4 @@
-import { AgentLens, type AgentLensConfig } from 'agentlens';
+import { AgentLens, type AgentLensConfig } from 'agentlens-core';
 import { defineComponent, type PropType, provide, watch, onBeforeUnmount } from 'vue';
 import { AgentLensKey } from './context';
 

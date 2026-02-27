@@ -1,4 +1,4 @@
-import { AgentLens } from 'agentlens';
+import { AgentLens } from 'agentlens-core';
 import 'agentlens/styles';
 
 const lens = new AgentLens();

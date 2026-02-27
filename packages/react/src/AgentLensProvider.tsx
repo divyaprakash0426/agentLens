@@ -1,4 +1,4 @@
-import { AgentLens, type AgentLensConfig } from 'agentlens';
+import { AgentLens, type AgentLensConfig } from 'agentlens-core';
 import { createContext, type ReactNode, useEffect, useMemo, useRef } from 'react';
 
 export const AgentLensContext = createContext<AgentLens | null>(null);

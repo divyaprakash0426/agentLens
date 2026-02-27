@@ -63,7 +63,7 @@ When AI agents automate browser tasks, users lose trust because they can't see w
 
 | Package | Description |
 |---|---|
-| `agentlens` | Core library — cursor, spotlight, action queue, DOM executor |
+| `agentlens-core` | Core library — cursor, spotlight, action queue, DOM executor |
 | `agentlens-parsers` | LLM output parsers for Gemini, OpenAI, Anthropic, and generic formats |
 | `agentlens-react` | React provider + `useAgentLens` hook + overlay component |
 | `agentlens-vue` | Vue 3 provider + `useAgentLens` composable + overlay component |
@@ -74,7 +74,7 @@ When AI agents automate browser tasks, users lose trust because they can't see w
 
 ```bash
 # Core only
-npm install agentlens
+npm install agentlens-core
 
 # With LLM parsers
 npm install agentlens agentlens-parsers
@@ -93,8 +93,8 @@ npm install agentlens agentlens-vue
 ### Vanilla JS / TypeScript
 
 ```ts
-import { AgentLens } from 'agentlens';
-import 'agentlens/styles'; // import default styles
+import { AgentLens } from 'agentlens-core';
+import 'agentlens-core/styles'; // import default styles
 
 const lens = new AgentLens({
   cursor: { color: '#a855f7', trailLength: 2 },
@@ -262,7 +262,7 @@ Wrap your app with `AgentLensProvider` and render `AgentLensOverlay`:
 
 ```tsx
 import { AgentLensProvider, AgentLensOverlay, useAgentLens } from 'agentlens-react';
-import 'agentlens/styles';
+import 'agentlens-core/styles';
 
 function AIControls() {
   const lens = useAgentLens();
@@ -334,7 +334,7 @@ const run = () => lens.enqueue([
 AgentLens can parse raw LLM output into actions. Include the system prompt in your model request so it knows how to format its response:
 
 ```ts
-import { ActionParser } from 'agentlens';
+import { ActionParser } from 'agentlens-core';
 
 // Get the system prompt to send to your model
 const systemPrompt = ActionParser.getSystemPrompt('gemini'); // or 'openai' | 'anthropic' | 'generic'
@@ -346,7 +346,7 @@ lens.parseAndEnqueue(modelResponseText, 'gemini');
 ### Gemini Live (WebSocket)
 
 ```ts
-import { AgentLens, ActionParser } from 'agentlens';
+import { AgentLens, ActionParser } from 'agentlens-core';
 
 const lens = new AgentLens({ cursor: { color: '#a855f7' }, spotlight: { showPopover: true } });
 
@@ -379,7 +379,7 @@ ws.addEventListener('close', () => lens.destroy());
 ### OpenAI Realtime
 
 ```ts
-import { AgentLens, ActionParser } from 'agentlens';
+import { AgentLens, ActionParser } from 'agentlens-core';
 import { parseOpenAIActions } from 'agentlens-parsers';
 
 const lens = new AgentLens();
@@ -405,7 +405,7 @@ lens.enqueue(actions);
 Import the default styles and override via CSS variables:
 
 ```html
-<link rel="stylesheet" href="node_modules/agentlens/dist/styles/agentlens.css" />
+<link rel="stylesheet" href="node_modules/agentlens-core/dist/styles/agentlens.css" />
 ```
 
 ```css
@@ -450,7 +450,7 @@ pnpm docs:build
 ```
 agentLens/
 ├── packages/
-│   ├── core/          # agentlens — cursor, spotlight, queue, executor
+│   ├── core/          # agentlens-core — cursor, spotlight, queue, executor
 │   ├── parsers/       # agentlens-parsers — LLM output parsers
 │   ├── react/         # agentlens-react — React adapter
 │   └── vue/           # agentlens-vue — Vue 3 adapter

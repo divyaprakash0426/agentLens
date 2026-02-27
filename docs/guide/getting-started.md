@@ -3,14 +3,14 @@
 ## Install
 
 ```bash
-pnpm add agentlens
+pnpm add agentlens-core
 ```
 
 ## Initialize
 
 ```ts
-import { AgentLens } from 'agentlens';
-import 'agentlens/styles';
+import { AgentLens } from 'agentlens-core';
+import 'agentlens-core/styles';
 
 const lens = new AgentLens({
   cursor: { color: '#a855f7', trailLength: 2 },

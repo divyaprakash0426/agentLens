@@ -22,10 +22,10 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "agentlens": "workspace:*",
+    "agentlens-core": "workspace:*",
     "vue": "^3.4.0"
   },
   "devDependencies": {
-    "agentlens": "workspace:*"
+    "agentlens-core": "workspace:*"
   }
 }

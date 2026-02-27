@@ -1,4 +1,4 @@
-import type { AgentAction, ParserFormat } from 'agentlens';
+import type { AgentAction, ParserFormat } from 'agentlens-core';
 import { useAgentLens } from './useAgentLens';
 
 export function useActionParser(format: ParserFormat = 'generic') {
