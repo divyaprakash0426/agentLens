@@ -1,6 +1,6 @@
 {
   "name": "agentlens-vue",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vue adapter for AgentLens",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
