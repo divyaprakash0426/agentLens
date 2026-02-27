@@ -1,4 +1,4 @@
-import { AgentLensOverlay, AgentLensProvider, useAgentLens } from '@agentlens/react';
+import { AgentLensOverlay, AgentLensProvider, useAgentLens } from 'agentlens-react';
 
 function Controls() {
   const lens = useAgentLens();

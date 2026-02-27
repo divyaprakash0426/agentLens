@@ -64,9 +64,9 @@ When AI agents automate browser tasks, users lose trust because they can't see w
 | Package | Description |
 |---|---|
 | `agentlens` | Core library — cursor, spotlight, action queue, DOM executor |
-| `@agentlens/parsers` | LLM output parsers for Gemini, OpenAI, Anthropic, and generic formats |
-| `@agentlens/react` | React provider + `useAgentLens` hook + overlay component |
-| `@agentlens/vue` | Vue 3 provider + `useAgentLens` composable + overlay component |
+| `agentlens-parsers` | LLM output parsers for Gemini, OpenAI, Anthropic, and generic formats |
+| `agentlens-react` | React provider + `useAgentLens` hook + overlay component |
+| `agentlens-vue` | Vue 3 provider + `useAgentLens` composable + overlay component |
 
 ---
 
@@ -77,13 +77,13 @@ When AI agents automate browser tasks, users lose trust because they can't see w
 npm install agentlens
 
 # With LLM parsers
-npm install agentlens @agentlens/parsers
+npm install agentlens agentlens-parsers
 
 # React adapter
-npm install agentlens @agentlens/react
+npm install agentlens agentlens-react
 
 # Vue adapter
-npm install agentlens @agentlens/vue
+npm install agentlens agentlens-vue
 ```
 
 ---
@@ -255,13 +255,13 @@ const lens = new AgentLens({
 ## React
 
 ```bash
-npm install agentlens @agentlens/react
+npm install agentlens agentlens-react
 ```
 
 Wrap your app with `AgentLensProvider` and render `AgentLensOverlay`:
 
 ```tsx
-import { AgentLensProvider, AgentLensOverlay, useAgentLens } from '@agentlens/react';
+import { AgentLensProvider, AgentLensOverlay, useAgentLens } from 'agentlens-react';
 import 'agentlens/styles';
 
 function AIControls() {
@@ -295,12 +295,12 @@ export default function App() {
 ## Vue
 
 ```bash
-npm install agentlens @agentlens/vue
+npm install agentlens agentlens-vue
 ```
 
 ```vue
 <script setup lang="ts">
-import { AgentLensProvider, AgentLensOverlay, useAgentLens } from '@agentlens/vue';
+import { AgentLensProvider, AgentLensOverlay, useAgentLens } from 'agentlens-vue';
 
 const config = { cursor: { color: '#a855f7' }, spotlight: { showPopover: true } };
 </script>
@@ -317,7 +317,7 @@ Access the instance inside a child component:
 
 ```vue
 <script setup lang="ts">
-import { useAgentLens } from '@agentlens/vue';
+import { useAgentLens } from 'agentlens-vue';
 const lens = useAgentLens();
 
 const run = () => lens.enqueue([
@@ -380,7 +380,7 @@ ws.addEventListener('close', () => lens.destroy());
 
 ```ts
 import { AgentLens, ActionParser } from 'agentlens';
-import { parseOpenAIActions } from '@agentlens/parsers';
+import { parseOpenAIActions } from 'agentlens-parsers';
 
 const lens = new AgentLens();
 
@@ -389,10 +389,10 @@ const actions = parseOpenAIActions(openAIResponse);
 lens.enqueue(actions);
 ```
 
-### Provider-specific parsers (`@agentlens/parsers`)
+### Provider-specific parsers (`agentlens-parsers`)
 
 ```ts
-import { parseGeminiActions, parseOpenAIActions, parseAnthropicActions, parseGenericActions } from '@agentlens/parsers';
+import { parseGeminiActions, parseOpenAIActions, parseAnthropicActions, parseGenericActions } from 'agentlens-parsers';
 
 const actions = parseGeminiActions(rawGeminiResponse);
 lens.enqueue(actions);
@@ -451,9 +451,9 @@ pnpm docs:build
 agentLens/
 ├── packages/
 │   ├── core/          # agentlens — cursor, spotlight, queue, executor
-│   ├── parsers/       # @agentlens/parsers — LLM output parsers
-│   ├── react/         # @agentlens/react — React adapter
-│   └── vue/           # @agentlens/vue — Vue 3 adapter
+│   ├── parsers/       # agentlens-parsers — LLM output parsers
+│   ├── react/         # agentlens-react — React adapter
+│   └── vue/           # agentlens-vue — Vue 3 adapter
 ├── examples/
 │   ├── vanilla-demo/
 │   ├── react-demo/

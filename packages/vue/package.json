@@ -1,5 +1,5 @@
 {
-  "name": "@agentlens/vue",
+  "name": "agentlens-vue",
   "version": "0.1.0",
   "description": "Vue adapter for AgentLens",
   "main": "dist/index.cjs",

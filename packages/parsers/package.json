@@ -1,5 +1,5 @@
 {
-  "name": "@agentlens/parsers",
+  "name": "agentlens-parsers",
   "version": "0.1.0",
   "description": "LLM-specific action parsers for AgentLens",
   "main": "dist/index.cjs",
