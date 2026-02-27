@@ -1,0 +1,53 @@
+.agentlens-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100001;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+.agentlens-cursor-dot {
+  width: var(--agentlens-cursor-size, 24px);
+  height: var(--agentlens-cursor-size, 24px);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--agentlens-cursor-color, #a855f7), transparent 70%);
+  box-shadow: 0 0 var(--agentlens-cursor-glow-spread, 15px) var(--agentlens-cursor-glow-color, rgba(168, 85, 247, 0.6));
+  transform: translate(-50%, -50%);
+}
+
+.agentlens-cursor-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(var(--agentlens-cursor-size, 24px) * 2);
+  height: calc(var(--agentlens-cursor-size, 24px) * 2);
+  border-radius: 50%;
+  border: 2px solid var(--agentlens-cursor-color, #a855f7);
+  opacity: 0.4;
+  transform: translate(-50%, -50%);
+  animation: agentlens-cursor-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes agentlens-cursor-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.1;
+  }
+}
+
+.agentlens-cursor-trail-dot {
+  position: fixed;
+  pointer-events: none;
+  width: var(--agentlens-cursor-size, 24px);
+  height: var(--agentlens-cursor-size, 24px);
+  border-radius: 50%;
+  background: var(--agentlens-cursor-color, #a855f7);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease;
+  will-change: transform, opacity;
+}

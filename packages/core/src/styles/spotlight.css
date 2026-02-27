@@ -1,0 +1,38 @@
+/* Override Driver.js defaults for AgentLens branding */
+
+.agentlens-spotlight .driver-overlay {
+  background: var(--agentlens-spotlight-overlay, rgba(0, 0, 0, 0.7)) !important;
+}
+
+.driver-active-element {
+  box-shadow:
+    0 0 0 var(--agentlens-spotlight-border-width, 2px) var(--agentlens-spotlight-border-color, #a855f7),
+    0 0 15px var(--agentlens-spotlight-glow-color, rgba(168, 85, 247, 0.5)),
+    0 0 30px var(--agentlens-spotlight-glow-color, rgba(168, 85, 247, 0.3)) !important;
+  border-radius: var(--agentlens-spotlight-border-radius, 8px) !important;
+}
+
+.agentlens-spotlight.driver-popover {
+  background: rgba(17, 17, 17, 0.95);
+  color: #e0e0e0;
+  border: 1px solid var(--agentlens-spotlight-border-color, #a855f7);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.agentlens-spotlight .driver-popover-title,
+.agentlens-spotlight.driver-popover .driver-popover-title {
+  color: var(--agentlens-spotlight-border-color, #a855f7);
+  font-weight: 600;
+}
+
+.agentlens-spotlight .driver-popover-description,
+.agentlens-spotlight.driver-popover .driver-popover-description {
+  color: #b0b0b0;
+}
+
+.agentlens-spotlight .driver-popover-navigation-btns,
+.agentlens-spotlight.driver-popover .driver-popover-navigation-btns {
+  display: none !important;
+}

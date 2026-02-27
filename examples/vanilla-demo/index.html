@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentLens Vanilla Demo</title>
+    <style>
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        margin: 2rem;
+      }
+      form {
+        display: grid;
+        gap: 0.75rem;
+        max-width: 320px;
+      }
+      button {
+        padding: 0.6rem 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AgentLens Vanilla Demo</h1>
+    <form>
+      <label>Email <input id="email" /></label>
+      <label>Password <input id="password" type="password" /></label>
+      <button id="login-btn" type="button">Login</button>
+    </form>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
