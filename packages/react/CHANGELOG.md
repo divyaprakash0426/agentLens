@@ -1,5 +1,13 @@
 # agentlens-react
 
+## 0.1.2
+
+### Patch Changes
+
+- 98baf70: Add README to all npm packages.
+- Updated dependencies [98baf70]
+  - agentlens-core@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

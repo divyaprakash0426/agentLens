@@ -1,6 +1,6 @@
 {
   "name": "agentlens-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React adapter for AgentLens",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
