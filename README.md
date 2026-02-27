@@ -77,13 +77,13 @@ When AI agents automate browser tasks, users lose trust because they can't see w
 npm install agentlens-core
 
 # With LLM parsers
-npm install agentlens agentlens-parsers
+npm install agentlens-core agentlens-parsers
 
 # React adapter
-npm install agentlens agentlens-react
+npm install agentlens-core agentlens-react
 
 # Vue adapter
-npm install agentlens agentlens-vue
+npm install agentlens-core agentlens-vue
 ```
 
 ---
@@ -255,7 +255,7 @@ const lens = new AgentLens({
 ## React
 
 ```bash
-npm install agentlens agentlens-react
+npm install agentlens-core agentlens-react
 ```
 
 Wrap your app with `AgentLensProvider` and render `AgentLensOverlay`:
@@ -295,7 +295,7 @@ export default function App() {
 ## Vue
 
 ```bash
-npm install agentlens agentlens-vue
+npm install agentlens-core agentlens-vue
 ```
 
 ```vue
