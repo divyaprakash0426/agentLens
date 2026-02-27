@@ -1,5 +1,11 @@
 # agentlens-parsers
 
+## 0.1.3
+
+### Patch Changes
+
+- 07e19de: Fix install commands in README (agentlens -> agentlens-core).
+
 ## 0.1.2
 
 ### Patch Changes

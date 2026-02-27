@@ -1,5 +1,13 @@
 # agentlens-react
 
+## 0.1.3
+
+### Patch Changes
+
+- 07e19de: Fix install commands in README (agentlens -> agentlens-core).
+- Updated dependencies [07e19de]
+  - agentlens-core@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
