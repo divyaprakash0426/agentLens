@@ -2,12 +2,14 @@ import { defineConfig } from 'vitepress';
 
 export default defineConfig({
   title: 'AgentLens',
-  description: 'Visualize AI-driven browser actions on live pages',
+  description: 'See what your AI sees. Watch what your AI does.',
+  base: '/agentLens/',
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'API', link: '/api/agentlens' },
-      { text: 'Examples', link: '/examples/gemini-live' }
+      { text: 'Examples', link: '/examples/gemini-live' },
+      { text: 'GitHub', link: 'https://github.com/divyaprakash0426/agentLens' }
     ],
     sidebar: {
       '/guide/': [
@@ -35,6 +37,13 @@ export default defineConfig({
         { text: 'Guided Tour', link: '/examples/guided-tour' },
         { text: 'Testing', link: '/examples/testing' }
       ]
+    },
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/divyaprakash0426/agentLens' }
+    ],
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2026 Divyaprakash Dhurandhar'
     }
   }
 });
