@@ -11,7 +11,8 @@ export default defineConfig({
     rollupOptions: {
       external: ['react', 'react-dom', 'agentlens'],
       output: {
-        exports: 'named'
+        exports: 'named',
+        banner: '"use client";'
       }
     }
   }
