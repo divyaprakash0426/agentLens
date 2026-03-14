@@ -1,5 +1,6 @@
-"agentlens-core": minor
-"agentlens-react": minor
+---
+"agentlens-core": patch
+"agentlens-react": patch
 ---
 
 Improve reliability for framework integrations and add Gemini Live helpers for UI action tooling.
