@@ -9,7 +9,7 @@ export default defineConfig({
       fileName: (format) => (format === 'es' ? 'index.mjs' : 'index.cjs')
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'agentlens'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime', 'agentlens-core'],
       output: {
         exports: 'named',
         banner: '"use client";'

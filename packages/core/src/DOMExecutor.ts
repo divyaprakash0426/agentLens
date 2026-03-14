@@ -5,7 +5,7 @@ interface DOMExecutorHooks {
   typingSpeed?: number;
   onClick?: (element: HTMLElement) => void;
   onType?: (element: HTMLElement, char: string, currentValue: string) => void;
-  onNavigate?: (url: string) => void;
+  onNavigate?: (url: string) => boolean | void | Promise<boolean | void>;
 }
 
 export class DOMExecutor {
@@ -166,7 +166,10 @@ export class DOMExecutor {
 
   private async executeNavigate(url: string): Promise<void> {
     const target = new URL(url, window.location.href);
-    this.hooks.onNavigate?.(target.toString());
+    const handled = await this.hooks.onNavigate?.(target.toString());
+    if (handled === true) {
+      return;
+    }
 
     if (target.origin === window.location.origin) {
       window.history.pushState({}, '', target.toString());

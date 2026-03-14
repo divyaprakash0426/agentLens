@@ -77,10 +77,26 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
   return Object.prototype.toString.call(value) === '[object Object]';
 }
 
-export function mergeConfig<T extends Record<string, unknown>>(base: T, override?: Partial<T>): T {
-  if (!override) return structuredClone(base);
+function cloneConfigValue<T>(value: T): T {
+  if (Array.isArray(value)) {
+    return value.map((item) => cloneConfigValue(item)) as unknown as T;
+  }
 
-  const result = structuredClone(base) as Record<string, unknown>;
+  if (isPlainObject(value)) {
+    const result: Record<string, unknown> = {};
+    for (const [key, nestedValue] of Object.entries(value)) {
+      result[key] = cloneConfigValue(nestedValue);
+    }
+    return result as T;
+  }
+
+  // Keep functions, DOM nodes, and class instances by reference.
+  return value;
+}
+
+export function mergeConfig<T extends Record<string, unknown>>(base: T, override?: Partial<T>): T {
+  const result = cloneConfigValue(base) as Record<string, unknown>;
+  if (!override) return result as T;
 
   for (const [key, value] of Object.entries(override)) {
     if (value === undefined) continue;
@@ -90,7 +106,7 @@ export function mergeConfig<T extends Record<string, unknown>>(base: T, override
       continue;
     }
 
-    result[key] = value;
+    result[key] = cloneConfigValue(value);
   }
 
   return result as T;

@@ -290,6 +290,47 @@ export default function App() {
 }
 ```
 
+### Next.js (App Router): register callbacks from a client component
+
+When using `AgentLensProvider` inside a Server Component layout, keep `config` serializable there.
+Attach function-based callbacks (for example `onActionError`) from a child client component:
+
+```tsx
+// app/agent-lens-runtime.tsx
+'use client';
+
+import { AgentLensRuntimeConfig } from 'agentlens-react';
+
+export function AgentLensRuntime() {
+  return (
+    <AgentLensRuntimeConfig
+      config={{
+        on: {
+          onActionError: (action, error) => {
+            console.warn('[AgentLens] Action failed:', error.message, action);
+          },
+        },
+      }}
+    />
+  );
+}
+```
+
+```tsx
+// app/layout.tsx (Server Component)
+import { AgentLensProvider } from 'agentlens-react';
+import { AgentLensRuntime } from './agent-lens-runtime';
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <AgentLensProvider config={{ cursor: { color: '#a855f7' } }}>
+      {children}
+      <AgentLensRuntime />
+    </AgentLensProvider>
+  );
+}
+```
+
 ---
 
 ## Vue

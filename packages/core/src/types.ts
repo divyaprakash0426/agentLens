@@ -92,7 +92,7 @@ export interface EventCallbacks {
   onSpotlight?: (action: AgentAction, element: HTMLElement) => void;
   onClick?: (element: HTMLElement) => void;
   onType?: (element: HTMLElement, char: string, currentValue: string) => void;
-  onNavigate?: (url: string) => void;
+  onNavigate?: (url: string) => boolean | void | Promise<boolean | void>;
   onSelectorNotFound?: (selector: string, action: AgentAction) => void;
 }
 
