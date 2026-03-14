@@ -1,5 +1,12 @@
 # agentlens-vue
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [6c68ab4]
+  - agentlens-core@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
